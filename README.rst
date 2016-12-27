@@ -1,11 +1,11 @@
-PLN 2015: Procesamiento de Lenguaje Natural 2015
+PLN 2015: Procesamiento de Lenguaje Natural 2015 (Traitement Automatique du Langage Naturel)
 ================================================
 
 
-Instalación
+Installation
 -----------
 
-1. Se necesita el siguiente software:
+1. Les modules et logiciels sont requis:
 
    - Git
    - Pip
@@ -13,44 +13,45 @@ Instalación
    - TkInter
    - Virtualenv
 
-   En un sistema basado en Debian (como Ubuntu), se puede hacer::
+   Python3 devrait déjà être présent sur les distributions Ubuntu depuis la version 14.04. La commande pour réaliser ces installations sur un système Debian ou Ubuntu est : ::
 
-    sudo apt-get install git python-pip python3.4 python3-tk virtualenv
+    sudo apt-get install git  python3-pip python3-tk virtualenv
 
-2. Crear y activar un nuevo
-   `virtualenv <http://virtualenv.readthedocs.org/en/latest/virtualenv.html>`_.
-   Recomiendo usar `virtualenvwrapper
-   <http://virtualenvwrapper.readthedocs.org/en/latest/install.html#basic-installation>`_.
-   Se puede instalar así::
+2. Créer et activer un nouveau  `virtualenv <https://virtualenv.readthedocs.io/en/stable/>`_. Pour cela, il est plus facile d'utiliser   `virtualenvwrapper <https://virtualenvwrapper.readthedocs.io/en/latest/>`_.
+   La commande pour l'installer est la suivante::
 
-    sudo pip install virtualenvwrapper
+    sudo pip3 install virtualenvwrapper
+    
+   Ajouter la variable suivante dans le bash si il risque d'y avoir un conflit entre python2 et python3 ::
+   
+      export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
-   Y luego agregando la siguiente línea al final del archivo ``.bashrc``::
+   Ajouter la ligne suivante à la fin du fichier ``.bashrc`` à l'aide de la commande::
 
     [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
-   Para crear y activar nuestro virtualenv::
+   Créer un nouvel environnement intitulé `pln-2015`::
 
-    mkvirtualenv --system-site-packages --python=/usr/bin/python3.4 pln-2015
+    mkvirtualenv --system-site-packages --python=/usr/bin/python3 pln-2015
 
-3. Bajar el código::
+3. Cloner le GitHub pour récupérer les données::
 
-    git clone https://github.com/PLN-FaMAF/PLN-2015.git
+    git clone https://github.com/bobocharbo/PLN-2015.git
 
-4. Instalarlo::
+4. Installer les packages recquis mentionnés dans le fichier requirements.txt::
 
     cd pln-2015
     pip install -r requirements.txt
 
 
-Ejecución
+Exécution
 ---------
 
-1. Activar el entorno virtual con::
+1. Activer l'environnemnt virtuel avec la commande::
 
     workon pln-2015
 
-2. Correr el script que uno quiera. Por ejemplo::
+2. Exécutez le script de votre choix, par exemple::
 
     python languagemodeling/scripts/train.py -h
 
@@ -62,10 +63,3 @@ Correr nose::
 
     nosetests
 
-
-Chequear Estilo de Código
--------------------------
-
-Correr flake8 sobre el paquete o módulo que se desea chequear. Por ejemplo::
-
-    flake8 languagemodeling
