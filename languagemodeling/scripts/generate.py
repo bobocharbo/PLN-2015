@@ -1,4 +1,4 @@
-"""Generate sentences from an n-gram model.
+"""Generate sentences from an n-gram model of a specific corpus.
 
 Usage:
   generate.py -i <file> -n <n>
