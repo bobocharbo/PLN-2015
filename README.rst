@@ -51,7 +51,15 @@ Exécution
 
     workon pln-2015
 
-2. Exécutez le script de votre choix, par exemple::
+2. Ajouter le chemin du module ngram::
+
+   export PYTHONPATH=/absolute/path/to/mypackage
+   
+Dans mon cas ::
+   
+   export PYTHONPATH=/home/bobo/cours/markov/Natural_Language_Processing/
+   
+3. Exécutez le script de votre choix, par exemple::
 
     python languagemodeling/scripts/train.py -h
 
