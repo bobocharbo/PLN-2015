@@ -26,7 +26,7 @@ import pickle
 import sys
 
 corpora = {
-    'S': PlaintextCorpusReader('../languagemodeling/corpora/', 'training_corpus.txt').sents(),
+    'S': PlaintextCorpusReader('languagemodeling/corpora/', 'training_corpus.txt').sents(),
     'B': brown.sents(),
     'G': gutenberg.sents(),
 }
